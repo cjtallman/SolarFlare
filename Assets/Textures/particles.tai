@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AtlasInfo texture="particle.png">
+  
+
+  <subimage name="stars"        u_offset="0.00f"    v_offset="0.00f"    width="0.25f"   height="0.25f" />
+  <subimage name="flash"        u_offset="0.25f"    v_offset="0.00f"    width="0.25f"   height="0.25f" />
+  <subimage name="explosion1"   u_offset="0.50f"    v_offset="0.00f"    width="0.25f"   height="0.25f" />
+  <subimage name="explosion2"   u_offset="0.75f"    v_offset="0.00f"    width="0.25f"   height="0.25f" />
+
+  <subimage name="smoke"        u_offset="0.00f"    v_offset="0.25f"    width="0.25f"   height="0.25f" />
+  <subimage name="cluster"      u_offset="0.25f"    v_offset="0.25f"    width="0.25f"   height="0.25f" />
+  <subimage name="circle"       u_offset="0.50f"    v_offset="0.25f"    width="0.25f"   height="0.25f" />
+  <subimage name="ring"         u_offset="0.75f"    v_offset="0.25f"    width="0.25f"   height="0.25f" />
+  
+  <subimage name="plus"         u_offset="0.00f"    v_offset="0.50f"    width="0.25f"   height="0.25f" />
+
+
+</AtlasInfo>

@@ -1,0 +1,27 @@
+BaseGeometry.cpp (69): Implement this
+OBB.h (5): -Intersection with OBB, ABB, Sphere, Polygon, Line/ray/segment
+TVector2.h (195): Decide behavior/document normalization of zero length vector
+NetworkEngine.cpp (179): Change static packet header so this isn't needed
+NetworkEngine.cpp (627): Consider precomputing an entities stream out size
+CExplosionEmitter.cpp (120): Particle-Count LOD
+ParticleBehaviors.h (3): Move this somewhere else... out of physics
+VectorField.cpp (61): avg, ie. xIndex = floor(4.25), force.x = 0.75 * vectorfield[x][y][z].x + 0.25 * vectorfield[x+1][y][z]
+Task.cpp (102): Add individual thread shutdown
+TaskManager.cpp (208): Naming? This returns whether the taskID is a working OR waiting task
+TaskManager.h (6):  -Consider making thread pool grow dynamically (like std::vector).
+ThreadImp_POSIX.cpp (45): check errors
+ThreadImp_POSIX.cpp (50): check error return vale
+ThreadImp_POSIX.cpp (58): would set the pthread_cond variable to free/open/etc
+ThreadImp_POSIX.cpp (69): Looks like pthread_cond_wait is the way to do this
+HashTable.h (325): Implement HashTable::Reserve
+MemoryManager.h (31): Add more debug functionality.
+OutputStream.h (18): Make StreamBuffer buffer size configurable
+Perlin.cpp (32): Test with/without seed. Still not sure on it
+Perlin.cpp (53): Test with/without seed. Still not sure on it
+Perlin.cpp (76): Test with/without seed. Still not sure on it
+Perlin.cpp (101): Test with/without seed. Still not sure on it
+Simplex.cpp (48): Test with/without seed. Still not sure on it
+Simplex.cpp (69): Test with/without seed. Still not sure on it
+Simplex.cpp (92): Test with/without seed. Still not sure on it
+Simplex.cpp (118): Test with/without seed. Still not sure on it
+Window_X11.cpp (130): mouse centering on linux

@@ -1,0 +1,31 @@
+Optimizing deformation:
+
+  Queueing deforms
+
+  - Don't do deforms immediately, keep a queue.
+  - Perform deformation every X frames.
+  - Not crucial to be done immediately, gameplay can handle a (short) delay.
+  - Perform multiple deforms in one "AddDeform" call.
+
+  Delaying heightbuffer updates
+  
+  - Similar to the above idea, dont update heightbuffer immediately
+  - Wait X frames from first deformation to do update.
+
+  Reducing deform draw to not always be 3 faces
+
+  - Eliminate first 3 faces w/dot-product test (quadPos dot faceNormal > 0). Only valid if we assume projected quad will be smaller than cube face.
+  - Test 3 remaining faces against position vectors of 4 quad corners ( min((plane_pt * n)/(quadCorner[i] * n)) ).
+  - Store plane choices in one byte.
+  - Might be faster than always drawing to 3 faces even when only 1 or 2 are needed.
+  - Probably wouldn't work well with the idea above (queueing deforms & drawing all at once)
+
+  Reducing height buffer update
+
+  - We can't index our sphere verts using theta/phi...
+  - Actually, we can.
+  - Build spatial data-structure around the sphere model.
+  - Same idea as octree or any other spatial partitioning technique, but use spherical coordinates.
+  - We can just use theta/phi, ignoring r.
+  - Get theta/phi range from quad center and corner vectors
+  - Very easily drop large number of redundant vertex updates.

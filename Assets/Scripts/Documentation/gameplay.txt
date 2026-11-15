@@ -1,0 +1,43 @@
+1. Player Class and Table
+
+game.players      (table)     Table of all player slots
+{
+  Player
+  {
+    AI            (bool)      Whether this is an AI player
+    buildTimer    (int)       Time until next cannon
+    buildCount    (int)       Number of available cannons to build
+    cannonTimer   (int)       Time until next shot
+    empty         (bool)      Whether this is an empty player slot
+    index         (int)       Player index
+    name          (string)    Player name
+    peerID        (int)       Network peer ID
+    planetID      (int)       Player's planet ID... obsolete?
+    
+    planet        (Planet)    Player's planet
+    {
+      entity      (userdata)  Planet's entity
+      ID          (int)       Planet's entity ID
+      cannons     (table)     Planet's cannons
+      {
+        Cannon    (Cannon)    
+        {
+          entity  (userdata)  Cannon's entity
+          ID      (int)       Cannon's entity ID
+        }
+        ...
+      }
+    }
+    
+    stats
+    {
+      ???
+    }
+    
+    score
+    {
+      ???
+    }
+  }
+  ...
+}

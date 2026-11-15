@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FontList version="0.1">
+  
+  <Font Name="Verdana"          MappedTexture="VerdanaFont"     DataFile="Textures/Fonts/VerdanaFontData.dat"/>
+  <Font Name="Arial"            MappedTexture="ArialFont"       DataFile="Textures/Fonts/ArialFontData.dat"/>
+  <Font Name="TimesNewRoman"    MappedTexture="TimesFont"       DataFile="Textures/Fonts/TimesFontData.dat"/>
+  <Font Name="Stentiga"         MappedTexture="StentigaFont"    DataFile="Textures/Fonts/StentigaFontData.dat"/>
+
+</FontList>

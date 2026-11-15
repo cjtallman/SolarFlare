@@ -1,0 +1,118 @@
+BUGS:
+
+THE NEXT THREE DAYS (GOLD - BY 4/16/09):
+  - Building desturction particle system
+  - Sounds                                - pmera
+    - Build structure
+    - Charging
+    - building destruction
+
+BEYOND GOLD:
+  - Tooltip improvments                   - pmera/ctallman
+    - Multiple text components inside
+      - Heading
+      - Description
+  - Camera Assistance
+    - Enter fire mode
+      - zoom out, focus towards nearest planet
+    - Enter build mode
+      - Rotate to a spot on planet where an intelligent placement would be
+  - Resource indication or # on button
+  - Planet shells from destruction
+  - Loading screen/2 stage loading
+  - Sounds
+    - Female voice over, apparently
+  - Better chat interface
+  - Cinema Death Camera
+    - Zoom around, planet that is getting hit
+    - planet that is firing a lot
+    - planet that is blowing up
+
+
+OTHER IDEAS:
+  - Satellite functionality
+    - Power: Near power plant boost effectiveness
+    - Cannon: Increased guidance / homing
+    - Shield: Shoots down enemy projectiles
+  - Solar flares
+
+
+
+Finished
+--------------------------------------------------------------------------------
+BUGS:
+  - FMOD sounds that are 3D don't obey mute settings?
+  - Quaternion::AlignToVector function seems to fail with phi = pi/2 
+  - Build countdown timer continues even when paused
+  - When a planet explodes in multiplayer, console gets spammed with error, planet gone not communicated
+  - Clicking home button doesn't work (script error, mainMenu.lua line 246, bad argument t0 GetEntity(nil) )
+  - Task stores paramater as void*, deleting void* doesn't call destructor, ie leaks parameter & deletes delegate0
+  - Minimizing followed by restoring the window causes a framebuffer EXT error.
+
+TASKS:
+  - Tooltip improvments                   - pmera/ctallman
+    - Positionng
+    - Text descriptions
+  - Credits Screen                        - nwilliam
+    - Scrolling text
+    - Ring asteroids
+  - Start camera assist                   - pmera (logic stuff)
+    - HUD button (camera looking)         - ctallman
+    - Enter fire mode
+      - take you out of geosync
+    - Enter build mode
+      - zoom you in
+      - put you in geosync
+  - Click home button
+    - If not looking at home, go there
+    - If at home, toggle geosync
+  - Fire button broken
+    - Change to mode on / mode off
+  - Planet gibs (asteroids breaking off)  - nathan
+  - Sounds
+    - Shield blocking
+  - Game font
+  - Configurable controls, saved to file, menu
+  - Firing reticule model
+  - Connection between unit graphics (particles?)
+  - Increase button size
+  - Additional HUD information
+    - Cannons ready to fire
+    - When in firing mode, how many cannons will fire
+  - AI
+    - To use new structurs
+    - Not fire randomly
+    - Build clusters of structures
+    - Fire semi-intelligently
+  - Networking
+    - Send sync-game message
+    - Send start game message
+    - Do 'loading...' on client buttons, 'waiting...' on server, 'start' when all ready
+  - Resource remaining indication (text to start with)
+  - Power plant structure
+  - Power planet model / texture
+  - Add 'hot keys' to menu elements / items / hud
+  - Satellite texture
+  - Shield generator model / texture
+  - Homing / tracking projectiles
+  - Better planet deformation!
+  - Parametize emmitter to allow for different colors (lua function)
+  - Supernova, countdown timer, environmental endgame
+  - Win / Lose condition / screen
+  - Multiplayer menu working...
+  - Fix client synch problems with 3+ players
+  - Basic stats (shots fired, times hit, hits made, planets destroyed)
+  - Scores and multipliers ^^
+  - Get interface panels up off the buttons yo
+  - Fix tab key (when your planet is gone, if you click on sun)
+  - Configurable noise from script / not always random color
+  - Randomize / configurable planet location / assignment
+  - Fix AI name generation / don't run out of names
+  - HUD Textures
+    - Build power plant
+    - Build shield
+    - Build cannon
+  - Shakey camera
+  - Game Cursor / Arrow graphic to replace system cursor
+  - Run time reloading of scripts
+  - Memory manager / tracking of usage location at a minimum

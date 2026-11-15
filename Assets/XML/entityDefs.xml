@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDefs version="0.1" >
+  <entity name="SKYBOX">
+    <component type="SKYBOX">
+      <texture left="Skybox1" right="Skybox5" top="Skybox2" bottom="Skybox3" front="Skybox4" back="Skybox3"/>
+      <shader fragment="skybox_frag"/>
+    </component>
+  </entity>
+
+  <entity name="DEV_CONSOLE" >
+    <component type="SCRIPT" asset="dev_console" />
+  </entity>
+
+  <entity name="GAME">
+    <component type="SCRIPT" asset="game_script" />
+    <component type="SOUND" >
+      <sound asset="four_seasons_summer_stream" loops="-1" type="music" positional="false" />
+    </component>
+  </entity>
+
+  <entity name="GAMESTATE_MANAGER">
+    <component type="SCRIPT" asset="gameStateManager_script" />
+  </entity>
+
+  <entity name="PLAYER">
+    <component type="NETWORK" />
+    <component type="SCRIPT" asset="playerScript" />
+  </entity>
+
+  <entity name="AICONTROLLER">
+    <component type="SCRIPT" asset="AIScript" />
+  </entity>
+
+  <entity name="TOOLTIP">
+    <component type="UI_REGION" />
+    <component type="TOOLTIP">
+      <shader fragment="text_frag"/>
+      <texture name="tooltip_panel"/>
+    </component>
+    <component type="TRANSFORM" />
+  </entity>
+  
+  <entity name="TEXT">
+    <component type="TEXT">
+      <shader fragment="text_frag"/>
+    </component>
+    <component type="TRANSFORM" />
+  </entity>
+
+  <!-- UI Elements -->
+  <entity name="MENUREGION">
+    <component type="TRANSFORM" />
+    <component type="UI_REGION" />
+    <!--<component type="INTERFACEPANEL">
+      <texture name="region_debug"/>
+    </component>-->
+  </entity>
+
+  <entity name="MENUPANEL">
+    <component type="TRANSFORM" />
+    <component type="UI_REGION" />
+    <component type="INTERFACEPANEL">
+      <texture name="tooltip_panel"/>
+    </component>
+  </entity>
+
+  <entity name="MENUBUTTON">
+    <component type="TRANSFORM" />
+    <component type="UI_BUTTON" />
+    <component type="INTERFACEQUAD">
+      <shader fragment="text_frag"/>
+    </component>
+    <component type="SOUND" name="onMouseOverSound">
+      <sound asset="mouseOverSound" loops="0" type="soundfx" />
+    </component>
+    <component type="SOUND" name="onClickSound">
+      <sound asset="mouseClickSound" loops="0" type="soundfx" />
+    </component>
+    <component type="SCRIPT" asset="MenuButtonScript" />
+  </entity>
+
+  <entity name="HUD_BUTTON">
+    <component type="TRANSFORM" />
+    <component type="UI_BUTTON" />
+    <component type="BUILDBUTTON">
+      <shader fragment="build_button_frag"/>
+    </component>
+    <component type="SOUND" name="onMouseOverSound">
+      <sound asset="mouseOverSound" loops="0" type="soundfx" />
+    </component>
+    <component type="SOUND" name="onClickSound">
+      <sound asset="mouseClickSound" loops="0" type="soundfx"  />
+    </component>
+    <component type="SCRIPT" asset="MenuButtonScript" />
+  </entity>
+
+  <entity name="MENUIMAGE">
+    <component type="TRANSFORM" />
+    <component type="UI_BASICELEMENT" />
+    <component type="INTERFACEQUAD"/>
+    <component type="SCRIPT" asset="basicElementScript" />
+  </entity>
+
+  <entity name="MENUTEXT">
+    <component type="TRANSFORM" />
+    <component type="UI_BASICELEMENT" />
+    <component type="TEXT">
+      <shader fragment="text_frag"/>
+    </component>
+    <component type="SCRIPT" asset="basicElementScript" />
+  </entity>
+
+  <entity name="MENUINPUTREGION">
+    <component type="TRANSFORM" />
+    <component type="UI_INPUTREGION"/>
+    <component type="INTERFACEQUAD">
+      <shader fragment="text_frag"/>
+    </component>
+  </entity>
+
+  <entity name="MENUSLIDER">
+    <component type="UI_SLIDER" />
+    <component type="TRANSFORM" name="barTransform" />
+    <component type="TRANSFORM" name="sliderTransform"/>
+    <component type="INTERFACEQUAD" name="barGraphic" transform="barTransform" />
+    <component type="INTERFACEQUAD" name="sliderGraphic" transform="sliderTransform" />
+  </entity>
+
+  <entity name="SCREENQUAD">
+    <component type="TRANSFORM"/>
+    <component type="INTERFACEQUAD"/>
+  </entity>
+
+  <!-- Structures -->
+  <entity name="CANNON" >
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL">
+      <model name="cannon_model" scale="75"/>
+      <texture name="cannon_texture"/>
+      <shader vertex="model_vert" fragment="cannon_frag" />
+    </component>
+    <component type="SCRIPT" asset="cannon_script" />
+    <component type="SOUND" >
+      <sound asset="cannonFire" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+
+  <entity name="SHIELD" >
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL" name="shield">
+      <model low="ball_low" medium="ball_medium" high="ball_high" scale="250" transparent="1"/>
+      <shader vertex="model_vert" fragment="shield_frag" />
+      <texture name="projectile_texture" />
+    </component>
+    <component type="MODEL" name="generator">
+      <model name="shield_model" scale="200"/>
+      <texture name="shield_generator_texture"/>
+      <shader vertex="model_vert" fragment="cannon_frag" />
+    </component>
+    <component type="PHYSICS" name="shieldPhysics" group="shields" />
+    <component type="SCRIPT" asset="shieldScript" />
+    <component type="SOUND">
+      <sound asset="shieldHitSound" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+
+  <entity name="POWERPLANT" >
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL">
+      <model name="power_plant_model" scale="190"/>
+      <texture name="power_plant_texture"/>
+      <shader vertex="model_vert" fragment="cannon_frag" />
+    </component>
+    <component type="CONNECTION_EMITTER" name="connectionEmitter" />
+    <component type="SCRIPT" asset="powerPlantScript" />
+  </entity>
+
+  <entity name="SATELLITE" >
+    <component type="NETWORK" />
+    <component type="TRANSFORM"/>
+    <component type="ORBITAL_PHYSICS" name="satellitePhysics" group="satellites" />
+    <component type="MODEL">
+      <model name="satellite_model" scale="0.5"/>
+      <texture name="satellite_texture"/>
+      <!--<normalmap name="asteroid3_normal"/>-->
+      <shader vertex="model_vert" fragment="model_frag" />
+    </component>
+    <!--<component type="SCRIPT" asset="planetEntityScript" />-->
+  </entity>
+
+  <!-- Non-networked structures, ie for showing the placement model -->
+  <entity name="CANNON_BUILD" >
+    <component type="TRANSFORM" />
+    <component type="MODEL">
+      <model name="cannon_model" scale="76"/>
+      <texture name="cannon_texture"/>
+      <shader vertex="model_vert" fragment="cannon_frag" />
+    </component>
+  </entity>
+
+  <entity name="SHIELD_BUILD" >
+    <component type="TRANSFORM" />
+    <component type="MODEL" name="generator">
+      <model name="shield_model" scale="201"/>
+      <texture name="shield_generator_texture"/>
+      <shader vertex="model_vert" fragment="cannon_frag" />
+    </component>
+  </entity>
+
+  <entity name="POWERPLANT_BUILD" >
+    <component type="TRANSFORM" />
+    <component type="MODEL" name="generator">
+      <model name="power_plant_model" scale="191"/>
+      <texture name="power_plant_texture"/>
+      <shader vertex="model_vert" fragment="cannon_frag" />
+    </component>
+  </entity>
+  
+  <!-- Solar system bodies -->
+  <entity name="SUN">
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="ORBITAL_PHYSICS" name="sunPhysics" group="sun" />
+    <component type="SUN">
+      <radius radius="1500" />
+      <color val="-1.00" r="20" g="0" b="0" />
+      <color val="-0.30" r="50" g="10" b="0" />
+      <color val="-0.20" r="128" g="16" b="4" />
+      <color val="0.00" r="255" g="32" b="8" />
+      <color val="1.00" r="255" g="0" b="0" />
+      <model name="planet"/>
+      <shader vertex="sun_vert" fragment="sun_frag" />
+    </component>
+    <component type="SOUND">
+      <sound asset="sunDeathSound" loops="0" type="soundfx" positional="false" />
+    </component>
+  </entity>
+
+  <entity name="PLANET" >
+    <component type="NETWORK" />
+    <component type="TRANSFORM"/>
+    <component type="ORBITAL_PHYSICS" name="planetPhysics" group="planets" />
+    <component type="PLANET">
+      <radius radius="200" />
+      <model name="planet"/>
+      <shader vertex="planet_vert" fragment="planet_frag" />
+      <texture crater="crater_texture" />
+    </component>
+    <component type="ELLIPSE" name="ellipse" />
+    <component type="SCRIPT" />
+  </entity>
+
+  <entity name="PLANETCHUNK" >
+    <component type="TRANSFORM"/>
+    <component type="PLANET">
+      <radius radius="200" />
+      <model name="planet"/>
+      <shader vertex="planet_vert" fragment="planet_frag" />
+      <texture crater="crater_texture" />
+    </component>
+    <component type="SCRIPT"/>
+  </entity>
+
+  <entity name="ASTEROID1">
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL">
+      <model name="asteroid0_model" scale="300"/>
+      <texture name="asteroid0_diffuse"/>
+      <normalmap name="asteroid0_normal"/>
+      <shader vertex="asteroid_vert" fragment="asteroid_frag" />
+    </component>
+    <component type="PHYSICS" name="asteroidPhysics" group="asteroids" />
+    <component type="SCRIPT" asset="asteroid_script" />
+  </entity>
+  
+  <entity name="ASTEROID2">
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL">
+      <model name="asteroid2_model" scale="300"/>
+      <texture name="asteroid2_diffuse"/>
+      <normalmap name="asteroid2_normal"/>
+      <shader vertex="asteroid_vert" fragment="asteroid_frag" />
+    </component>
+    <component type="PHYSICS" name="asteroidPhysics" group="asteroids" />
+    <component type="SCRIPT" asset="asteroid_script" />
+  </entity>
+  
+  <entity name="ASTEROID3">
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL">
+      <model name="asteroid3_model" scale="300"/>
+      <texture name="asteroid3_diffuse"/>
+      <normalmap name="asteroid3_normal"/>
+      <shader vertex="asteroid_vert" fragment="asteroid_frag" />
+    </component>
+    <component type="PHYSICS" name="asteroidPhysics" group="asteroids" />
+    <component type="SCRIPT" asset="asteroid_script" />
+  </entity>
+
+  <entity name="SPACE_DEBRIS">
+    <component type="NETWORK" />
+    <component type="TRANSFORM" />
+    <component type="MODEL" name="debris">
+      <model name="spaceDebris_model1" scale="300"/>
+      <texture name="spaceDebris_texture1"/>
+      <shader vertex="model_vert" fragment="model_frag" />
+    </component>
+    <component type="PHYSICS" name="debrisPhysics" group="asteroids" />
+    <component type="SCRIPT" />
+  </entity>
+
+  <!-- Projectile related things -->
+  <entity name="PROJECTILE">
+    <component type="NETWORK" />
+    <component type="MODEL">
+      <model name="ball_low" scale="35" transparent="1"/>
+      <shader fragment="projectile_frag" />
+      <texture name="projectile_texture" />
+    </component>
+    <component type="TRANSFORM" />
+    <component type="ROCKETEMITTER">
+      <color_start r="16" g="255" b="8" a="255" />
+      <color_end r="144" g="255" b="40" a="255" />
+      <size_start value="200" />
+      <size_end value="0" />
+      <emit_rate value="25.0" />
+      <lifetime value="250.0" />
+      <particle_type value="4" />
+      <additivity_start value="1.0" />
+      <additivity_end value="1.0" />
+    </component>
+    <component type="PHYSICS" name="projectilePhysics" group="projectiles" />
+    <component type="SCRIPT" asset="projectile_script" />
+  </entity>
+
+  <entity name="TRACER">
+    <component type="TRANSFORM" />
+    <component type="ROCKETEMITTER">
+      <color_start r="255" g="255" b="255" a="255" />
+      <color_end r="255" g="255" b="255" a="0" />
+      <size_start value="90" />
+      <size_end value="30" />
+      <emit_rate value="75.0" />
+      <lifetime value="700.0" />
+      <x_motion value="0.0" />
+      <particle_type value="7" />
+    </component>
+    <component type="PHYSICS" name="tracerPhysics" group="tracers" />
+    <component type="SCRIPT" asset="tracer_script" />
+  </entity>
+
+  <entity name="CROSSHAIR">
+    <component type="TRANSFORM" />
+    <component type="WORLD_QUAD">
+      <texture name="reticule_texture"/>
+      <shader vertex="world_quad_vert" fragment="world_quad_frag" />
+    </component>
+    <component type="MODEL">
+      <model name="arrow_model" scale="500" transparent="1"/>
+      <texture name="white"/>
+      <shader vertex="model_vert" fragment="crosshair_frag" />
+    </component>
+    <component type="SCRIPT" asset="crosshairScript" />
+  </entity>
+
+  <entity name="MUZZLE_FLASH">
+    <component type="TRANSFORM" />
+    <component type="SCRIPT" asset="muzzleFlash_script" />
+    <component type="EXPLOSIONEMITTER">
+      <duration value="200" />
+      <color_start r="64" g="255" b="32" a="50" />
+      <color_end r="32" g="200" b="16" a="0" />
+      <size_start value="50" />
+      <size_end value="600" />
+      <z_motion value="000" />
+      <x_motion value="300" />
+      <particle_count value="50" />
+      <particle_type value="1" />
+    </component>
+  </entity>
+
+
+  <!-- Explosions and effects -->
+  <entity name="SUPERNOVA">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER" >
+      <duration value="60000" />
+      <color_start r="255" g="255" b="200" a="255" />
+      <color_end r="255" g="255" b="255" a="255" />
+      <size_start value="0" />
+      <size_end value="500000" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="1" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" >
+      <duration value="7000" />
+      <color_start r="255" g="120" b="0" a="100" />
+      <color_end r="255" g="120" b="0" a="0" />
+      <size_start value="0" />
+      <size_end value="50000" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" >
+      <duration value="5000" />
+      <color_start r="255" g="255" b="255" a="100" />
+      <color_end r="255" g="255" b="255" a="0" />
+      <size_start value="0" />
+      <size_end value="50000" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="3" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" >
+      <duration value="20000" />
+      <color_start r="255" g="120" b="120" a="255" />
+      <color_end r="255" g="120" b="120" a="0" />
+      <size_start value="0" />
+      <size_end value="150" />
+      <z_motion value="200000" />
+      <x_motion value="200000" />
+      <particle_count value="2000" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" >
+      <duration value="20000" />
+      <color_start r="255" g="255" b="120" a="255" />
+      <color_end r="255" g="255" b="120" a="0" />
+      <size_start value="0" />
+      <size_end value="150" />
+      <z_motion value="200000" />
+      <x_motion value="200000" />
+      <particle_count value="2000" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="SOUND">
+      <sound asset="supernovaSound" loops="0" type="soundfx" positional="false" />
+    </component>
+    
+  </entity>
+
+  <entity name="EXPLOSION">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER" name="explosion1" >
+      <duration value="1500" />
+      <color_start r="150" g="200" b="50" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="300" />
+      <size_end value="600" />
+      <z_motion value="600" />
+      <x_motion value="300" />
+      <particle_count value="10" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" name="explosion2" >
+      <duration value="1000" />
+      <color_start r="32" g="255" b="0" a="255" />
+      <color_end r="255" g="255" b="64" a="0" />
+      <size_start value="60" />
+      <size_end value="30" />
+      <z_motion value="800" />
+      <x_motion value="800" />
+      <particle_count value="10" />
+      <particle_type value="4" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" name="explosion3" >
+      <duration value="800" />
+      <color_start r="255" g="255" b="0" a="255" />
+      <color_end r="255" g="255" b="64" a="0" />
+      <size_start value="40" />
+      <size_end value="20" />
+      <z_motion value="800" />
+      <x_motion value="800" />
+      <particle_count value="10" />
+      <particle_type value="5" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER" name="explosion4" >
+      <duration value="600" />
+      <color_start r="32" g="255" b="0" a="255" />
+      <color_end r="255" g="255" b="64" a="0" />
+      <size_start value="20" />
+      <size_end value="10" />
+      <z_motion value="800" />
+      <x_motion value="800" />
+      <particle_count value="10" />
+      <particle_type value="3" />
+    </component>
+
+    <component type="FLASHEMITTER" name="flash" >
+      <frequency value="0" />
+      <count value="1" />
+      <duration value="200.0" />
+      <color_start r="225" g="255" b="200" a="200" />
+      <color_end r="225" g="255" b="200" a="0" />
+      <size_start value="0" />
+      <size_end value="3000" />
+      <particle_type value="1" />
+    </component>
+
+    <component type="SCRIPT" asset="explosion_script" />
+
+    <component type="WORLD_QUAD">
+      <texture name="shockwave_texture"/>
+      <shader vertex="world_quad_vert" fragment="world_quad_frag" />
+    </component>
+    <component type="SOUND">
+      <sound asset="projectileExplosion" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+
+  <entity name="EXPLOSION_SHIELD">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="700" />
+      <color_start r="150" g="200" b="50" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="200" />
+      <size_end value="300" />
+      <z_motion value="100" />
+      <x_motion value="100" />
+      <particle_count value="12" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="SCRIPT" asset="explosion_script" />
+
+    <component type="SOUND">
+      <sound asset="projectileTimeout" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+  
+  <entity name="EXPLOSION_TIMEOUT">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="1500" />
+      <color_start r="150" g="200" b="50" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="300" />
+      <size_end value="600" />
+      <z_motion value="600" />
+      <x_motion value="300" />
+      <particle_count value="10" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="SCRIPT" asset="explosion_script" />
+
+    <component type="SOUND">
+      <sound asset="projectileTimeout" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+
+  <entity name="EXPLOSION_ASTEROID">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="1200" />
+      <color_start r="128" g="128" b="128" a="255" />
+      <color_end r="32" g="32" b="32" a="0" />
+      <size_start value="150" />
+      <size_end value="200" />
+      <z_motion value="300" />
+      <x_motion value="300" />
+      <additivity_start value="0.5" />
+      <additivity_end value="0.0" />
+      <particle_count value="6" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="SCRIPT" asset="explosion_script" />
+
+    <component type="SOUND">
+      <sound asset="projectileTimeout" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+  
+  <entity name="PLANET_EXPLOSION">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="3000" />
+      <color_start r="250" g="240" b="120" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="2500" />
+      <size_end value="2000" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="1000" />
+      <color_start r="255" g="255" b="128" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="2500" />
+      <size_end value="2000" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="SCRIPT" asset="planetExplosion_script" />
+
+    <component type="WORLD_QUAD">
+      <texture name="shockwave_texture"/>
+      <shader vertex="world_quad_vert" fragment="world_quad_frag" />
+    </component>
+
+    <component type="SOUND" >
+      <sound asset="planetExplosion" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+
+  <entity name="SMALL_EXPLOSION">
+    <component type="TRANSFORM" />
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="2100" />
+      <color_start r="250" g="240" b="120" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="1000" />
+      <size_end value="800" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="EXPLOSIONEMITTER">
+      <duration value="700" />
+      <color_start r="255" g="255" b="128" a="255" />
+      <color_end r="0" g="0" b="0" a="0" />
+      <size_start value="1000" />
+      <size_end value="800" />
+      <z_motion value="0" />
+      <x_motion value="0" />
+      <particle_count value="1" />
+      <particle_type value="2" />
+    </component>
+
+    <component type="SCRIPT" asset="explosion_script" />
+    <component type="SOUND" >
+      <sound asset="planetExplosionShort" loops="0" type="soundfx" positional="true" />
+    </component>
+  </entity>
+
+  <entity name="SHIELD_EFFECT">
+    <component type="TRANSFORM" />
+    <component type="WORLD_QUAD">
+      <texture name="shieldGraphic"/>
+      <shader vertex="world_quad_vert" fragment="world_quad_frag" />
+    </component>
+    <component type="SCRIPT" />
+  </entity>
+</EntityDefs>

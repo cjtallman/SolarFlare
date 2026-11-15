@@ -1,0 +1,20 @@
+# Preserve recovered files byte-for-byte, including their original line endings.
+* -text
+
+# Repository documentation and configuration use LF.
+/README.md text eol=lf
+/RIGHTS-REVIEW.md text eol=lf
+/Source/External/**/README.md text eol=lf
+/.gitignore text eol=lf
+/.gitattributes text eol=lf
+
+# Binary assets and bundled dependencies are stored in Git LFS.
+*.png filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.ico filter=lfs diff=lfs merge=lfs -text
+*.lwo filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
+*.a filter=lfs diff=lfs merge=lfs -text

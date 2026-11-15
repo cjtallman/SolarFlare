@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssetList>
+  <!-- Scripts -->
+  <!-- Note: Be careful of dependencies (like update functions, for example) -->
+  <!--       ie, if a function isn't defined you will get nil -NOT- an error -->
+  <asset_c file="Menus/audioMenu.lua"        name="audioMenu_script" />
+  <asset_c file="Menus/basicElement.lua"     name="basicElementScript" />
+  <asset_c file="Menus/creditsMenu.lua"      name="creditsMenu_script" />
+  <asset_c file="Menus/gameOptionsMenu.lua"  name="gameOptionsMenu_script" />
+  <asset_c file="Menus/graphicsMenu.lua"     name="graphicsMenu_script" />
+  <asset_c file="Menus/HUDMenu.lua"          name="HUDMenuScript" />
+  <asset_c file="Menus/mainMenu.lua"         name="mainMenu_script" />
+  <asset_c file="Menus/menuElement.lua"      name="menuElement_script" />
+  <asset_c file="Menus/menuSystem.lua"       name="menuSystem_script" />
+  <asset_c file="Menus/mutliplayerMenu.lua"  name="multiplayerMenu_script" />
+  <asset_c file="Menus/optionsMenu.lua"      name="optionsMenu_script" />
+  <asset_c file="Menus/pauseMenu.lua"        name="pauseMenu_script" />
+  <asset_c file="Menus/scoreMenu.lua"        name="scoreMenuScript" />
+  <asset_c file="Menus/serverBrowser.lua"    name="serverBrowserScript" />
+  <asset_c file="Menus/setupMPMenu.lua"      name="setupMPMenu_script" />
+  <asset_c file="Menus/setupSPMenu.lua"      name="setupSPMenu_script" />
+  <asset_c file="Menus/tooltip.lua"          name="tooltipScript" />
+
+  <asset_c file="ai.lua"                  name="AIScript" />
+  <asset_c file="asteroid.lua"            name="asteroid_script" />
+  <asset_c file="baseState.lua"           name="baseStateScript" />
+  <asset_c file="camera.lua"              name="camera_script" />
+  <asset_c file="cannon.lua"              name="cannon_script" />
+  <asset_c file="controller.lua"          name="controller" />
+  <asset_c file="crosshair.lua"           name="crosshairScript" />
+  <asset_c file="devConsole.lua"          name="dev_console" />
+  <asset_c file="endGameState.lua"        name="endGameStateScript" />
+  <asset_c file="explosion.lua"           name="explosion_script" />
+  <asset_c file="game.lua"                name="game_script" />
+  <asset_c file="gameIntro.lua"           name="game_intro_script" />
+  <asset_c file="gameOutro.lua"           name="game_outro_script" />
+  <asset_c file="gameplayState.lua"       name="gameplayStatescript" />
+  <asset_c file="gameStateManager.lua"    name="gameStateManager_script" />
+  <asset_c file="intro.lua"               name="intro_script" />
+  <asset_c file="muzzleFlash.lua"         name="muzzleFlash_script" />
+  <asset_c file="persistentSettings.lua"  name="persistentSettings_script" />
+  <asset_c file="player.lua"              name="playerScript" />
+  <!--<asset_c file="playerScore.lua"         name="playerScore_script" />-->
+  <asset_c file="playerStats.lua"         name="playerStats_script" />
+  <asset_c file="planet.lua"              name="planetScript" />
+  <asset_c file="planetExplosion.lua"     name="planetExplosion_script" />
+  <asset_c file="powerPlant.lua"          name="powerPlantScript"/>
+  <asset_c file="projectile.lua"          name="projectile_script"/>
+  <asset_c file="queue.lua"               name="queue_script"/>
+  <asset_c file="satellite.lua"           name="satelliteScript" />
+  <asset_c file="shield.lua"              name="shieldScript" />
+  <asset_c file="solarSystem.lua"         name="solarSystem_script" />
+  <asset_c file="stack.lua"               name="stack_script" />
+  <asset_c file="structure.lua"           name="structureScript" />
+  <asset_c file="spaceDebris.lua"         name="spaceDebris_script" />
+  <asset_c file="timer.lua"               name="timer_script" />
+  <asset_c file="title.lua"               name="title_script" />
+  <asset_c file="towerPlacement.lua"      name="towerPlacementscript" />
+  <asset_c file="tracer.lua"              name="tracer_script" />
+  <asset_c file="tracerBlip.lua"          name="tracerBlipScript" />
+  <asset_c file="vec3.lua"                name="vec3_script" />
+  <asset_c file="MenuButton.lua"          name="MenuButtonScript" />
+
+  <!-- Models -->
+  <asset file="arrow.lwo"                     name="arrow_model" />
+  <asset file="asteroid0.lwo"                 name="asteroid0_model" />
+  <asset file="asteroid1.lwo"                 name="asteroid1_model" />
+  <asset file="asteroid2.lwo"                 name="asteroid2_model" />
+  <asset file="asteroid3.lwo"                 name="asteroid3_model" />
+  <asset file="planet.lwo"                    name="planet" />
+  <asset file="ball_low.lwo"                  name="ball_low" />
+  <asset file="ball_medium.lwo"               name="ball_medium" />
+  <asset file="ball_high.lwo"                 name="ball_high" />
+  <asset file="satellite.lwo"                 name="satellite_model" />
+  <asset file="shield_generator.lwo"          name="shield_model" />
+  <asset file="cannon.lwo"                    name="cannon_model" />
+  <asset file="power_generator.lwo"           name="power_plant_model" />
+  <asset file="spaceDebris1.lwo"              name="spaceDebris_model1" />
+  <asset file="spaceDebris2.lwo"              name="spaceDebris_model2" />
+  <asset file="spaceDebris3.lwo"              name="spaceDebris_model3" />
+  <asset file="spaceDebris4.lwo"              name="spaceDebris_model4" />
+
+  <asset file="crackedPlanet/chunk1.lwo"      name="planetChunk1" />
+  <asset file="crackedPlanet/chunk2.lwo"      name="planetChunk2" />
+  <asset file="crackedPlanet/chunk3.lwo"      name="planetChunk3" />
+  <asset file="crackedPlanet/chunk4.lwo"      name="planetChunk4" />
+  <asset file="crackedPlanet/chunk5.lwo"      name="planetChunk5" />
+  <asset file="crackedPlanet/chunk6.lwo"      name="planetChunk6" />
+  <asset file="crackedPlanet/chunk7.lwo"      name="planetChunk7" />
+  <asset file="crackedPlanet/chunk8.lwo"      name="planetChunk8" />
+  <asset file="crackedPlanet/chunk9.lwo"      name="planetChunk9" />
+  <asset file="crackedPlanet/chunk10.lwo"     name="planetChunk10" />
+  <asset file="crackedPlanet/chunk11.lwo"     name="planetChunk11" />
+  <asset file="crackedPlanet/chunk12.lwo"     name="planetChunk12" />
+  <asset file="crackedPlanet/chunk13.lwo"     name="planetChunk13" />
+  <asset file="crackedPlanet/chunk14.lwo"     name="planetChunk14" />
+  <asset file="crackedPlanet/chunk15.lwo"     name="planetChunk15" />
+  <asset file="crackedPlanet/chunk16.lwo"     name="planetChunk16" />
+  
+
+  <!-- Shaders -->
+  <asset file="asteroid.frag"     name="asteroid_frag" />
+  <asset file="asteroid.vert"     name="asteroid_vert" />
+  <asset file="bloomCurve.frag"   name="bloomCurve" />
+  <asset file="bloomCombine.frag" name="bloomCombine" />
+  <asset file="blur11x11.frag"    name="blur11x11_frag" />
+  <asset file="blur3x3.frag"      name="blur3x3_frag" />
+  <asset file="blur5x5.frag"      name="blur5x5_frag" />
+  <asset file="build_button.frag" name="build_button_frag" />
+  <asset file="cannon.frag"       name="cannon_frag" />
+  <asset file="crosshair.frag"    name="crosshair_frag" />
+  <asset file="deform.vert"       name="deform_vert" />
+  <asset file="deform.frag"       name="deform_frag" />
+  <asset file="model.frag"        name="model_frag" />
+  <asset file="model.vert"        name="model_vert" />
+  <asset file="particle.frag"     name="particle_frag" />
+  <asset file="particle.vert"     name="particle_vert" />
+  <asset file="planet.frag"       name="planet_frag" />
+  <asset file="planet.vert"       name="planet_vert" />
+  <asset file="projectile.frag"   name="projectile_frag" />
+  <asset file="satellite.frag"    name="satellite_frag" />
+  <asset file="satellite.vert"    name="satellite_vert" />
+  <asset file="shield.frag"       name="shield_frag" />
+  <asset file="simple.frag"       name="simple_frag" />
+  <asset file="skybox.frag"       name="skybox_frag" />
+  <asset file="sun.frag"          name="sun_frag" />
+  <asset file="sun.vert"          name="sun_vert" />
+  <asset file="text.frag"         name="text_frag" />
+  <asset file="world_quad.frag"   name="world_quad_frag" />
+  <asset file="world_quad.vert"   name="world_quad_vert" />
+
+
+  <!-- Fonts -->
+  <asset file="Fonts/ArialFont.png"     name="ArialFont" />
+  <asset file="Fonts/TimesFont.png"     name="TimesFont" />
+  <asset file="Fonts/VerdanaFont.png"   name="VerdanaFont" />
+  <asset file="Fonts/StentigaFont.png"  name="StentigaFont" />
+
+  <!-- Particles -->
+  <asset file="particle.png"    name="particle" />
+  <asset file="particles.tai"   name="particle_atlas" />
+
+  <!-- Textures -->
+  <asset_c file="digipen_screen.png"                      name="intro_digipen" />
+  <asset_c file="copywrite.png"                           name="copywrite" />
+  <asset_c file="solar_flare_title.png"                   name="title" />
+  <asset_c file="team_screen.png"                         name="intro_team" />
+  <asset file="reticule.png"                              name="reticule_texture" />
+  <asset file="Menus/Sliders/sliderbar.png"               name="sliderbar" />
+  <asset file="Menus/Sliders/sliderbar_knob.png"          name="sliderbar_knob" />
+  <asset file="Menus/Sliders/sliderbar_knob_over.png"     name="sliderbar_knob_over" />
+  <asset file="Menus/Buttons/wide_button.png"             name="menu_up" />
+  <asset file="Menus/Buttons/wide_button_over.png"        name="menu_over" />
+  <asset file="Menus/Buttons/build_button.png"            name="build_button" />
+  <asset file="Menus/Buttons/build_button_disabled.png"   name="build_button_disabled" />
+  <asset file="Menus/Buttons/build_button_over.png"       name="build_button_over" />
+  <asset file="Menus/Buttons/fire_button.png"             name="fire_button" />
+  <asset file="Menus/Buttons/fire_button_disabled.png"    name="fire_button_disabled" />
+  <asset file="Menus/Buttons/fire_button_over.png"        name="fire_button_over" />
+  <asset file="Menus/Buttons/home_button.png"             name="home_button" />
+  <asset file="Menus/Buttons/home_button_over.png"        name="home_button_over" />
+  <asset file="Menus/Buttons/geosync_button.png"          name="geosync_button" />
+  <asset file="Menus/Buttons/geosync_button_over.png"     name="geosync_button_over" />
+  <asset file="Menus/Buttons/cannon_button.png"           name="cannon_button" />
+  <asset file="Menus/Buttons/cannon_button_disabled.png"  name="cannon_button_disabled" />
+  <asset file="Menus/Buttons/cannon_button_over.png"      name="cannon_button_over" />
+  <asset file="Menus/Buttons/shield_button.png"           name="shield_button" />
+  <asset file="Menus/Buttons/shield_button_disabled.png"  name="shield_button_disabled" />
+  <asset file="Menus/Buttons/shield_button_over.png"      name="shield_button_over" />
+  <asset file="Menus/Buttons/power_button.png"            name="power_button" />
+  <asset file="Menus/Buttons/power_button_disabled.png"   name="power_button_disabled" />
+  <asset file="Menus/Buttons/power_button_over.png"       name="power_button_over" />
+  <asset file="Menus/Buttons/camera_button.png"           name="camera_button" />
+  <asset file="Menus/Buttons/camera_button_disabled.png"  name="camera_button_disabled" />
+  <asset file="Menus/Buttons/camera_button_over.png"      name="camera_button_over" />
+
+  <asset file="Menus/panels/panel.png"            name="panel" />
+  <asset file="Menus/panels/tooltip.png"          name="tooltip_panel" />
+  <asset_c file="Menus/panels/region_debug.png"   name="region_debug" />
+
+  <asset file="Menus/Icons/death.png"             name="death_icon" />
+  <asset file="Menus/Icons/hit.png"               name="hit_icon" />
+  <asset file="Menus/Icons/asteroid.png"          name="asteroid_icon" />
+  <asset file="Menus/cursors/arrow1.png"          name="arrowCursor" />
+
+  <asset file="fruitloop.png"                     name="blipGraphic" />
+  <asset file="shield_effect.png"                 name="shieldGraphic" />
+  <asset file="crater.png"                        name="crater_texture" />
+
+  <asset_c file="Skybox/Skybox1.png"  name="Skybox1" />
+  <asset_c file="Skybox/Skybox2.png"  name="Skybox2" />
+  <asset_c file="Skybox/Skybox3.png"  name="Skybox3" />
+  <asset_c file="Skybox/Skybox4.png"  name="Skybox4" />
+  <asset_c file="Skybox/Skybox5.png"  name="Skybox5" />
+    
+  <asset file="Models/asteroid0_diffuse.png"  name="asteroid0_diffuse" />
+  <asset file="Models/asteroid0_normal.png"   name="asteroid0_normal" />
+  <asset file="Models/asteroid1_diffuse.png"  name="asteroid1_diffuse" />
+  <asset file="Models/asteroid1_normal.png"   name="asteroid1_normal" />
+  <asset file="Models/asteroid2_diffuse.png"  name="asteroid2_diffuse" />
+  <asset file="Models/asteroid2_normal.png"   name="asteroid2_normal" />
+  <asset file="Models/asteroid3_diffuse.png"  name="asteroid3_diffuse" />
+  <asset file="Models/asteroid3_normal.png"   name="asteroid3_normal" />
+  <asset file="Models/power_generator.tga"    name="power_plant_texture" />
+  <asset file="Models/projectile.tga"         name="projectile_texture" />
+  <asset file="Models/cannon.tga"             name="cannon_texture" />
+  <asset file="Models/shield_generator.tga"   name="shield_generator_texture" />
+  <asset file="Models/satellite.png"          name="satellite_texture" />
+  <asset file="Models/spaceDebris1.png"       name="spaceDebris_texture1" />
+  <asset file="Models/spaceDebris2.png"       name="spaceDebris_texture2" />
+  <asset file="Models/spaceDebris3.png"       name="spaceDebris_texture3" />
+  <asset file="Models/spaceDebris4.png"       name="spaceDebris_texture4" />
+
+
+  <asset file="shockwave2.png"    name="shockwave_texture" />
+  <asset file="white.png"        name="white" />
+
+  <!-- Sounds -->
+  <asset file="cannonFire.ogg"                name="cannonFire" />
+  <asset file="explosionLarge.ogg"            name="explosion_large" />
+  <asset file="explosionMediumFireball.ogg"   name="explosion_medium_fireball" />
+  <asset file="fourSeasons_summer.ogg"        name="four_seasons_summer_stream"  />
+  <asset file="planetExplosionShort.ogg"      name="planetExplosionShort" />
+  <asset file="planetExplosionLong.ogg"       name="planetExplosionLong" />
+  <asset file="planetExplosion.ogg"           name="planetExplosion" />
+  <asset file="projectileExplosion.ogg"       name="projectileExplosion" />
+  <asset file="projectileTimeout.ogg"         name="projectileTimeout" />
+  <asset file="shieldHit.ogg"                 name="shieldHitSound" />
+  <asset file="sunDeath.ogg"                  name="sunDeathSound" />
+  <asset file="supernova.ogg"                 name="supernovaSound" />
+
+  <asset file="build1.ogg"                    name="build1" />
+  <asset file="build2.ogg"                    name="build2" />
+  <asset file="charge.ogg"                    name="charge" />
+
+
+  <asset file="menuMouseOver.ogg"             name="mouseOverSound"/>
+  <asset file="menuMouseClick.ogg"            name="mouseClickSound"/>
+
+</AssetList>

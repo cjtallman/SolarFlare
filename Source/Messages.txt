@@ -1,0 +1,53 @@
+Format:
+  "TypeName"
+  Stack1
+  Stack2
+  ...
+  StackN
+
+Creating Messages From Lua:
+GameLib.AddMessage( destination,    - "global" or "entity"
+                    "TypeName",     - Any string
+                    TimeDelay,      - Any number
+                    Route,          - MSG_ALL, MSG_LOCAL, MSG_ALL_PEERS, MSG_SINGLE_PEER - destination(s) of message
+                    stack[0],       - First item on message stack
+                    ...,            - ...
+                    stack[n]        - Last item on message stack
+                   )
+
+////////////////////////////////////////////////////////////////////////////////
+// Game/Gameplay Related:
+////////////////////////////////////////////////////////////////////////////////
+PhysicsCollision
+  EntityID  -   Receiving entity
+  EntityID  -   Entity they collided with
+  float     -   X location of collision, in world coordinates
+  float     -   Y location of collision, in world coordinates
+  float     -   Z location of collision, in world coordinates
+
+EntityCreated
+  String    -   Definition name
+  EntityID  -   ID of the new entity
+
+GameSyncOut
+  (empty stack)
+
+GameSyncIn
+  int       -   Planet Count
+  EntityID  -   First planet id
+  ...       -   ...
+  EntityID  -   Last planet id
+
+PeerAdded
+  int       -   ClientNetworkID
+
+PeerRemoved
+  int       -   ClientNetworkID
+
+
+////////////////////////////////////////////////////////////////////////////////
+// System Related:
+////////////////////////////////////////////////////////////////////////////////
+WindowResize
+  int       -   New window width
+  int       -   New window height

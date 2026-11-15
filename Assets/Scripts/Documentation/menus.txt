@@ -1,0 +1,32 @@
+1. Known Issues
+
+  menuElement:SetMargin - Formatting with margins currently does not work as it should.
+  no color changing options available!?!?
+
+2. Menu System Guide
+
+  The menu system is essentially a tree of menuElements.
+  
+  Element creation methods (menuElement:CreateButton, menuElement:CreateRegion, etc.) create
+child menu elements.
+
+  Property setting methods (menuElement:SetDimensions, menuElement:SetText, etc.) set
+various properties of the element if they exist.
+
+  The root menuElement (menu.root) is a screen-sized region.
+  
+3. Example
+  
+    local myRegion = menu.root:CreateRegion()             -- Create a region within the root region
+      myRegion:SetAlignment("CENTER", "TOP")              -- Set alignment of contained elements
+      myRegion:SetLayout("TopToBottom")                   -- Set layout of contained elements
+    
+    local myHeader = myRegion:CreateText()                -- Create a text element within myRegion
+      myHeader:SetText("Hello MenuSystem!")               -- Set the content of the text element
+    
+    local myButton = myRegion:CreateButton()              -- Create a button below the text
+      myButton:SetText("My Button!!")                     -- Set the button's text
+      myButton:SetCallback("OnClick", myButtonFunction)   -- Set the button's OnClick behavior
+      
+    local myRegion:Fade(0,1)                              -- Fade the region from alpha 0.0 to 1.0
+    

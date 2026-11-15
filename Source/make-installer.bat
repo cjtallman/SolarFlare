@@ -1,0 +1,1 @@
+"C:\Program FIles\NSIS\makensis.exe" /ONSIS-LOG.txt installer.nsi
